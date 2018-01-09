@@ -19,7 +19,7 @@ passport.use(
     new GoogleStrategy({
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
-        callbackURL:'/auth/google/callback'
+        callbackURL:'https://serene-river-54622.herokuapp.com/auth/google/callback'
     }, (accessToken,refreshToken,profile,done) => {   // error function
         User.findOne({googleId:profile.id}).then((existingUser) => {
             if (existingUser){
